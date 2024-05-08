@@ -1,5 +1,6 @@
 DISPLAY
-![Screenshot 2024-05-09 021016](https://github.com/phamthikimdung/DATA_SUMMARIZATION/assets/169218029/65047d22-81fa-4f61-85cb-871d22580aec)
+![Screenshot 2024-05-09 022824](https://github.com/phamthikimdung/DATA_SUMMARIZATION/assets/169218029/ab03f07f-365b-4628-8979-503ba55d2ddc)
+
 
 
 
