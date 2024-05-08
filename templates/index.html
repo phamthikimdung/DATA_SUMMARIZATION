@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Summarization</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/static/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="header">CHAT DATA SUMMARIZATION</div>
+        <div class="button-group">
+            <button class="clear-button" type="button" onclick="clearFields()">New Chat</button>
+        </div>
+    </div>
+
+    <div class="app">
+        <div class="container">
+            <form action="/Summarize" method="post">
+                <textarea name="data" id="data" placeholder="Enter your Data" required="required"></textarea>
+                <input type="range" name="maxL" id="maxL" min="20" max="1000" value="500">
+                
+                <button class ="submit-button" type="submit" onclick="Check()">Submit</button>
+                
+            </form>
+
+            <div class="result-container">
+                <textarea name="result" readonly placeholder="Your Summary">{{result}}</textarea>
+                
+                <button class="copy-button" onclick="myFunction()">Copy text</button>
+               
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var copyText = document.querySelector(".result-container textarea");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+        }
+
+        function Check() {
+            var reg = /<(.|\n)*>/g;
+            var dataValue = document.getElementById("data").value;
+            if (reg.test(dataValue)) {
+                alert('Make Sure You Provide Valid Data.');
+            }
+        }
+
+        function clearFields() {
+            document.getElementById("data").value = "";
+            document.getElementById("maxL").value = "500";
+            document.querySelector(".result-container textarea").value = "";
+        }
+    </script>
+</body>
+
+</html>
