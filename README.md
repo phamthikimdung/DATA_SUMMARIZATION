@@ -1,4 +1,5 @@
-DISPLAY
+#DISPLAY
+![Screenshot 2024-05-09 021016](https://github.com/phamthikimdung/DATA_SUMMARIZATION/assets/169218029/65047d22-81fa-4f61-85cb-871d22580aec)
 
 
 
